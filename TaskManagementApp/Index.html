@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header, section {
+            padding: 20px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .task-list {
+            margin: 20px 0;
+        }
+
+        .task-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 5px 0;
+        }
+
+            .task-item.completed {
+                background-color: #e0ffe0;
+            }
+    </style>
+</head>
+<body>
+    <header class="container">
+        <h1>Task Management System</h1>
+    </header>
+
+    <section id="employee-section" class="container">
+        <h2>Employee Section</h2>
+        <div>
+            <h3>Add New Task</h3>
+            <form id="add-task-form">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+                <br>
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description" required>
+                <br>
+                <label for="dueDate">Due Date:</label>
+                <input type="date" id="dueDate" name="dueDate" required>
+                <br>
+                <button type="submit">Add Task</button>
+            </form>
+        </div>
+        <div class="task-list" id="employee-task-list">
+            <h3>Task List</h3>
+            <!-- Tasks will be displayed here -->
+        </div>
+    </section>
+
+    <section id="manager-section" class="container">
+        <h2>Manager Section</h2>
+        <div class="task-list" id="manager-task-list">
+            <h3>Team Task List</h3>
+            <!-- Tasks will be displayed here -->
+        </div>
+    </section>
+
+    <section id="admin-section" class="container">
+        <h2>Admin Section</h2>
+        <div>
+            <h3>Reports</h3>
+            <button onclick="generateReport('week')">Tasks due in a Week</button>
+            <button onclick="generateReport('month')">Tasks due in a Month</button>
+            <div id="report"></div>
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
